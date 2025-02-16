@@ -54,7 +54,6 @@ const TransactionPage = () => {
               className="border border-gray-300 flex justify-between items-start rounded-md p-2 min-h-[90px]"
             >
               <div className="flex flex-col justify-between h-full">
-                {index + 1}
                 <div>
                   {transaction.transaction_type === "TOPUP" ? (
                     <div className="flex items-center gap-x-2 text-green-600">
