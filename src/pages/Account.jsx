@@ -130,7 +130,7 @@ const AccountPage = () => {
           {selectedFile && (
             <button
               onClick={uploadImage}
-              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md"
+              className="mt-2 px-4 py-2 bg-red-600 cursor-pointer text-white rounded-md"
             >
               Upload Foto
             </button>
