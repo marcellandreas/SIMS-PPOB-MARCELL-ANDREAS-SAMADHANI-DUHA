@@ -38,7 +38,7 @@ const LoginPage = () => {
 
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
-      setIsLoading(true); // Aktifkan loading state
+      setIsLoading(true);
 
       try {
         const response = await axios.post(
@@ -55,8 +55,9 @@ const LoginPage = () => {
 
         if (token) {
           setTimeout(() => {
-            window.location.reload();
-          }, 5000); // Reload setelah 5 detik
+            navigate("/");
+            // window.location.reload();
+          }, 5000);
         }
       } catch (error) {
         setResponseMessage({
@@ -65,7 +66,7 @@ const LoginPage = () => {
             error.response?.data?.message || "Terjadi kesalahan, coba lagi",
         });
       } finally {
-        setIsLoading(false); // Matikan loading state
+        setIsLoading(false);
       }
     } else {
       setResponseMessage(null);
