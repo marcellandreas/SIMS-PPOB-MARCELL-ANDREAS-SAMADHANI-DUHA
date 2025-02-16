@@ -15,6 +15,7 @@ import {
   updateProfile,
   updateProfileImage,
 } from "../redux/Slices/ProfileSlice";
+import { useNavigate } from "react-router-dom";
 
 const AccountPage = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const AccountPage = () => {
   const [previewImage, setPreviewImage] = useState(null);
   const [message, setMessage] = useState("");
   const [isEditing, setIsEditing] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchProfile());
@@ -93,7 +95,9 @@ const AccountPage = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.reload();
+
+    // window.location.reload();
+    navigate("/");
   };
 
   return (
