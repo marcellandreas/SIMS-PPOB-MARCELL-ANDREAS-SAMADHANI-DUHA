@@ -55,7 +55,8 @@ const LoginPage = () => {
 
         if (token) {
           setTimeout(() => {
-            navigate("/");
+            // navigate("/");
+            window.location.href = "/";
             // window.location.reload();
           }, 5000);
         }
