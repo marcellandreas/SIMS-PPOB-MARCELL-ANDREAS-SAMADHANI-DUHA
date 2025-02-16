@@ -19,10 +19,7 @@ const TransactionPage = () => {
     (state) => state.transactions
   );
 
-  console.log("check limit", limit);
-
   useEffect(() => {
-    console.log("Fetching transactions...", { offset, limit });
     dispatch(fetchTransactions({ offset, limit }));
   }, [limit, offset, dispatch]);
 

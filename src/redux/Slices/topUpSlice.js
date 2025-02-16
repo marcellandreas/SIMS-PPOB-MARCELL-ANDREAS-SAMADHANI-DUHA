@@ -42,7 +42,6 @@ const topupSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchTopUp.fulfilled, (state) => {
-        console.log("berhalan slice");
         state.loading = false;
         state.success = true;
         state.error = null;

@@ -42,7 +42,6 @@ export const updateProfileImage = createAsyncThunk(
   async (imageFile) => {
     const formData = new FormData();
     formData.append("profile_image", imageFile);
-    console.log(imageFile);
     const response = await axios.put(
       `https://take-home-test-api.nutech-integrasi.com/profile/image`,
       formData,
@@ -53,7 +52,6 @@ export const updateProfileImage = createAsyncThunk(
         },
       }
     );
-    console.log(formData);
     return response.data.data;
   }
 );

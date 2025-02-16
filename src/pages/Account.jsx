@@ -50,8 +50,6 @@ const AccountPage = () => {
     }
   }, [first_name, last_name, email, profile_image]);
 
-  console.log(profile_image, "image");
-
   const handleChange = (e) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };

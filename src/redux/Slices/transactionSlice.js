@@ -35,7 +35,6 @@ export const fetchTransactions = createAsyncThunk(
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      console.log("limit :", limit, "ofset :", offset, "a");
       return response.data.data.records;
     } catch (error) {
       return rejectWithValue(
@@ -63,7 +62,6 @@ const transactionSlice = createSlice({
       state.limit = 5;
     },
     increaseOffsetAndLimit: (state) => {
-      console.log(state, "offsetandlimit");
       // state.offset += state.limit;
       state.limit += 5;
     },
@@ -92,7 +90,6 @@ const transactionSlice = createSlice({
       })
       // .addCase(fetchTransactions.fulfilled, (state, action) => {
       //   state.status = "succeeded";
-      //   console.log("check limit", action);
       //   state.transactions = [...state.transactions, ...action.payload];
       // })
       .addCase(fetchTransactions.fulfilled, (state, action) => {
@@ -103,8 +100,6 @@ const transactionSlice = createSlice({
         } else {
           state.transactions = [...state.transactions, ...action.payload];
         }
-
-        console.log("Final Transactions:", state.transactions.length);
       })
       .addCase(fetchTransactions.rejected, (state, action) => {
         state.status = "failed";
